@@ -9,8 +9,9 @@ class University (object):
 
 
     def update_departments(self,department):
-        self.departments.append(department)
-        return self
+        if department not in self.departments:
+         self.departments.append(department)
+
 
     def show_departments(self):
         print(f"Departamentos: {self.departments}")

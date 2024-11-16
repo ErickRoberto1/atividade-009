@@ -3,13 +3,18 @@
 class Professor:
     def __init__(self, name):
         self.name = name
-        self.disciplinas = []
+        self.subjects = []
 
 
     def set_name (self, name):
         self.name = name
-    def add_disciplina(self, disciplina):
-        self.disciplinas.append(disciplina)
+    def add_subject(self, disciplina):
+        self.subjects.append(disciplina)
         return
-    def get_disciplinas(self):
-        return self.disciplinas
+    def get_subject(self):
+        return self.subjects
+
+
+    def show(self):
+        print(f"Professor: {self.name}"
+              f"Disciplinas: {self.subjects}")
