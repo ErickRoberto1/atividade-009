@@ -16,5 +16,6 @@ class Professor:
 
 
     def show(self):
-        print(f"Professor: {self.name}"
-              f"Disciplinas: {self.subjects}")
+        for i in range(len(self.subjects)):
+            print(f"Professor: {self.name}"
+                  f"Disciplinas: {self.subjects}")

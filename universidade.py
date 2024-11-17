@@ -1,10 +1,9 @@
 
 
-class University (object):
+class University :
     def __init__(self):
-        super().__init__(object)
         self.name = 'Universidade'
-        self.departments = [object]
+        self.departments = []
 
 
 
