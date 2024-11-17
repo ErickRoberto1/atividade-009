@@ -1,15 +1,7 @@
-from professor import Professor
-
-class Subject:
-    def __init__(self,professor):
-        self.subject = None
-        self.subject_professor = professor
-
-
-    def set_subject(self, subject):
-        if self.subject is None:
-            self.subject = subject
+class Disciplina:
+    def __init__(self, nome, professor):
+        self.nome = nome
+        self.professor = professor
 
     def get_professor(self):
-        return self.subject_professor
-
+        return self.professor

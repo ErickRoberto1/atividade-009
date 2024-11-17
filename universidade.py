@@ -1,17 +1,14 @@
-from departamento import Department
-from professor import Professor
+class Universidade:
+    def __init__(self, nome):
+        self.nome = nome
+        self.departamentos = []
 
-class University :
-    def __init__(self):
-        self.name = 'Universidade'
-        self.departments = []
+    def adicionar_departamento(self, departamento):
+        self.departamentos.append(departamento)
 
+    def remover_departamento(self, departamento):
+        if departamento in self.departamentos:
+            self.departamentos.remove(departamento)
 
-
-    def update_departments(self,department):
-        if department not in self.departments:
-         self.departments.append(department)
-
-
-    def show_departments(self):
-        print(f"Departamentos: {self.departments}")
+    def listar_departamentos(self):
+        return [dep.nome for dep in self.departamentos]

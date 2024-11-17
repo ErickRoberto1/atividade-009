@@ -1,21 +1,14 @@
-
-
 class Professor:
-    def __init__(self, name):
-        self.name = name
-        self.subjects = []
+    def __init__(self, nome):
+        self.nome = nome
+        self.disciplinas = []
 
+    def adicionar_disciplina(self, disciplina):
+        self.disciplinas.append(disciplina)
 
-    def set_name (self, name):
-        self.name = name
-    def add_subject(self, disciplina):
-        self.subjects.append(disciplina)
-        return
-    def get_subject(self):
-        return self.subjects
+    def remover_disciplina(self, disciplina):
+        if disciplina in self.disciplinas:
+            self.disciplinas.remove(disciplina)
 
-
-    def show(self):
-        for i in range(len(self.subjects)):
-            print(f"Professor: {self.name}"
-                  f"Disciplinas: {self.subjects}")
+    def listar_disciplinas(self):
+        return [disc.nome for disc in self.disciplinas]

@@ -1,17 +1,5 @@
-from universidade import University
+from universidade import Universidade
+from departamento import Departamento
 from professor import Professor
-from departamento import Department
-from disciplina import Subject
-
-university = University()
-running = True
-while running:
-    answer = input("1 para atualizar departamentos - \n")
-
-    if answer == "1":
-        departamento = input("Departamento: ")
-        departamento = Department()
-        university.update_departments(departamento)
-        running = False
-        break
+from disciplina import Disciplina
 

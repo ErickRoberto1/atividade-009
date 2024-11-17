@@ -1,28 +1,15 @@
+class Departamento:
+    def __init__(self, nome):
+        self.nome = nome
+        self.professores = []
 
+    def adicionar_professor(self, professor):
+        self.professores.append(professor)
 
-class Department:
-    def __init__(self):
-        self.name = None
-        self.subjects = []
-        self.professor_list = []
+    def remover_professor(self, professor):
+        if professor in self.professores:
+            self.professores.remove(professor)
 
-    def add_professor(self,professor):
-        if professor not in self.professor_list:
-            self.professor_list.append(professor)
-
-    def remove_professor(self,professor):
-        if professor in self.professor_list:
-            self.professor_list.remove(professor)
-
-
-    def set_name(self, name):
-        if self.name is None:
-            self.name = name
-
-    def get_name(self):
-        return self.name
-
-    def show (self):
-        print(f"Department :{self.name}"
-              f"Disciplinas: {self.subjects}"
-              f"Professores: {self.professor_list}")
+    def listar_professores(self):
+        for professor in self.professores:
+            print(professor.nome)
