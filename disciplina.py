@@ -1,4 +1,4 @@
-
+from professor import Professor
 
 class Subject:
     def __init__(self,professor):

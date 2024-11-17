@@ -1,4 +1,5 @@
-
+from departamento import Department
+from professor import Professor
 
 class University :
     def __init__(self):
