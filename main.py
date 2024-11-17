@@ -10,6 +10,7 @@ def comandos_universidade():
 2 - Remover departamento
 3 - Listar departamentos
 0 - Fechar programa''')
+    return input('Comando: ').strip()
     
 def comandos_departamento():
     print('''\n--- Menu Departamento ---
@@ -18,6 +19,7 @@ def comandos_departamento():
 3 - Listar professores
 4 - Voltar
 0 - Fechar programa''')
+    return input('Comando: ').strip()
 
 def comandos_professor():
     print('''\n--- Menu Professor ---
@@ -26,6 +28,7 @@ def comandos_professor():
 3 - Listar disciplinas
 4 - Voltar
 0 - Fechar programa''')
+    return input('Comando: ').strip()
 
 
 running = True
@@ -35,8 +38,7 @@ while running:
     system('cls')
 
     if nivel == 0:
-        comandos_universidade()
-        comando = input('Comando: ')
+        comando = comandos_universidade()
         if comando == '0':
             running = False
         elif comando in ['1', '2', '3']:
@@ -44,8 +46,7 @@ while running:
             nivel += 1 
     
     elif nivel == 1:
-        comandos_departamento()
-        comando = input('Comando: ')
+        comando = comandos_departamento()
         if comando == '0':
             running = False
         elif comando == '4':
@@ -55,8 +56,7 @@ while running:
             nivel += 1 
     
     elif nivel == 2:
-        comandos_professor()
-        comando = input('Comando: ')
+        comando = comandos_professor()
         if comando == '0':
             running = False
         elif comando == '4':
