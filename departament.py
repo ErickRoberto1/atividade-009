@@ -1,6 +1,6 @@
 from professor import Professor
 
-class Departament:
+class Department:
     def __init__(self, name):
         self.name = name
         self.professors = []
@@ -8,23 +8,16 @@ class Departament:
     def __str__(self):
         return f'{self.name}'
 
-    def add_new_professor(self, professor_name):
-        if professor_name not in self.professors:
-            self.professors.append(professor_name)
+    def add_new_professor(self, professor:Professor):
+        if professor not in self.professors:
+            self.professors.append(professor)
 
-    def remove_professor(self, professor_name):
-        for professor in self.professors:
-            if professor_name == self.professors.name:
-                index = self.get_index(professor_name)
-                del self.professors[index]
-
-
+    def remove_professor(self, professor:Professor):
+        if professor in self.professors:
+            self.professors.remove(professor)
 
     def list_professors(self):
         print(f"Lista de Professores do Departamento {self.name}: ")
         return [prof.name for prof in self.professors]
 
-    def get_index(self,professor_name):
-        for i in range(len(self.professors)):
-            if professor_name == self.professors[i].name:
-                return i
+

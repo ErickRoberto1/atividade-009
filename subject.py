@@ -1,7 +1,7 @@
 class Subject:
-    def __init__(self, name, professor):
+    def __init__(self, name):
         self.name = name
-        self.professor = professor
+        self.professor = []
 
     def get_professor(self):
         return self.professor

@@ -1,4 +1,4 @@
-from departament import Departament
+from departament import Department
 class University:
     def __init__(self, name):
         self.name = name
@@ -7,7 +7,7 @@ class University:
     def __str__(self):
         return f'{self.name}'
 
-    def add_new_department(self,department):
+    def add_new_department(self,department:Department):
         if department not in self.departments:
             self.departments.append(department)
         else:
@@ -17,16 +17,13 @@ class University:
         for department in self.departments:
             if department.name == department_name:
                 index = self.get_index(department_name)
-                del self.departments[index]
-
-    def get_index(self,department):
-        for i in range(len(self.departments)):
-            if department == self.departments[i].name:
-                return i
-
-
+                self.departments.remove(self.departments[index])
 
     def list_departments(self):
         return [dep.name for dep in self.departments]
 
+    def get_index(self,department_name):
+        for i in range(len(self.departments)):
+            if self.departments[i].name == department_name:
+                return i
         
