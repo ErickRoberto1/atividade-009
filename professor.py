@@ -14,16 +14,18 @@ class Professor:
             self.subjects.append(subject)
             subject.professor = self
 
-    def remove_subject(self, subject):
-        if subject in self.subjects:
-            self.subjects.remove(subject)
-            index = self.get_index(subject)
-            del self.subjects[index]
+    def remove_subject(self, subject_name):
+        for subject in self.subjects:
+            if subject.name == subject_name:
+                index = self.get_index(self.subjects,subject_name)
+                del self.subjects[index]
+
+
 
     def list_subjects(self):
         return [sub.name for sub in self.subjects]
 
-    def get_index(self, subject):
+    def get_index(self, subject_list,subject):
         for i in range(len(self.subjects)):
-            if self.subjects[i].name == subject:
+            if subject_list[i].name == subject:
                 return i

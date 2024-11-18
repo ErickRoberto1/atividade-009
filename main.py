@@ -35,9 +35,25 @@ def main():
     for dep in department:
         print(dep.list_professors())
 
+    print('\nAntes:\n')
     for prof in professor:
         print(f'Professor: {prof.name}')
         print(f'Disciplinas: {prof.list_subjects()}')
+
+
+
+    sub_to_be_removed = 'Cálculo I'
+    for prof in professor:
+        prof.remove_subject(sub_to_be_removed)
+
+
+    print('\nDepois:\n')
+    for prof in professor:
+        print(f'Professor: {prof.name}')
+        print(f'Disciplinas: {prof.list_subjects()}')
+
+
+
 
 
 

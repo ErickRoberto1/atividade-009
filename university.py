@@ -13,11 +13,10 @@ class University:
         else:
             print('Este departamento Já existe na Universidade!')
 
-    def remove_department(self,department):
-        if department in self.departments:
-            print(f'Departamento {department} removido com sucesso!')
-            index = self.get_index(department)
-            del self.departments[index]
+    def remove_department(self,department_name):
+        for department in self.departments:
+            if department.name == department_name:
+                index = self.get_index(self,department_name)
 
     def get_index(self,department):
         for i in range(len(self.departments)):
