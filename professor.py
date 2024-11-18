@@ -3,6 +3,10 @@ class Professor:
         self.nome = nome
         self.disciplinas = []
 
+    def __str__(self):
+        return f'Professor: {self.nome}'
+
+
     def adicionar_disciplina(self, disciplina):
         self.disciplinas.append(disciplina)
 
@@ -12,3 +16,4 @@ class Professor:
 
     def listar_disciplinas(self):
         return [disc.nome for disc in self.disciplinas]
+
