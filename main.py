@@ -11,7 +11,7 @@ departments = ["Departamento de Matemática Aplicada", "Departamento de Engenhar
                "Departamento de Física","Departamento de Química"]
 
 #classes(subjects)
-subs = ["Matemática Discreta", "Álgebra Linear I","Álgebra Linear II", "Cálculo I","Cálculo Numérico"]
+subs = ["Matemática Discreta", "Álgebra Linear I","Álgebra Linear II", "Cálculo I","Cálculo Numérico","Linguagem de Programação"]
 
 
 def main():
@@ -26,6 +26,9 @@ def main():
         uni.add_new_department(dep)
         dep.add_new_professor(prof)
 
+    for prof,sub in zip(professor,sub):
+        prof.add_subject(sub)
+
     print(f'Departamentos: \n')
     print(uni.list_departments())
     print('\n')
@@ -33,7 +36,10 @@ def main():
         print(dep.list_professors())
 
     for prof in professor:
-        print(prof.list_subjects())
+        print(f'Professor: {prof.name}')
+        print(f'Disciplinas: {prof.list_subjects()}')
+
+
 
 
 

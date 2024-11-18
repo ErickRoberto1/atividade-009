@@ -19,7 +19,7 @@ class Departament:
             del self.professors[index]
 
     def list_professors(self):
-        print(f"Lista de Professores do Departamento {self.name}: \n")
+        print(f"Lista de Professores do Departamento {self.name}: ")
         return [prof.name for prof in self.professors]
 
     def get_index(self,professor_name):
