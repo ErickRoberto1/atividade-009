@@ -62,6 +62,19 @@ def main():
     print(professor[1])
     print('Imprimindo objeto removido: ')
     print(professor[3])
+    print('\n')
+    print('Removendo professor de departamento:Professor4 ')
+    print('Antes:')
+    for dep in department:
+        print(dep.list_professors())
+
+    prof_to_be_removed = 'Professor4'
+    for dep in department:
+        dep.remove_professor(prof_to_be_removed)
+    print('Depois:')
+    for dep in department:
+        print(dep.list_professors())
+
 
 
 
