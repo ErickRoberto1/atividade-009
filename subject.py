@@ -1,6 +1,6 @@
-class Disciplina:
-    def __init__(self, nome, professor):
-        self.nome = nome
+class Subject:
+    def __init__(self, name, professor):
+        self.name = name
         self.professor = professor
 
     def get_professor(self):
