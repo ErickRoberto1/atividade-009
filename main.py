@@ -16,7 +16,7 @@ subs = ["Matemática Discreta", "Álgebra Linear I","Álgebra Linear II", "Cálc
 
 def main():
     global professors, departments,sub
-    uni = University("Universidade")
+    uni = University("-- Universidade --")
 
     department = [Department(name) for name in departments]
     professor = [Professor(name) for name in professors]
@@ -35,6 +35,9 @@ def main():
     for dep in department:
         print(dep.list_professors())
     print('\n')
+
+    #universidade sem remoções
+    print(f'objeto Universidade sem as remoções: {uni}')
 
     #removendo departamentos da universidade
     print(f'Removendo departamentos da Universidade: Eng de Software')
@@ -74,6 +77,22 @@ def main():
     print('Depois:')
     for dep in department:
         print(dep.list_professors())
+
+    # universidade com remoções
+    print(f'objeto Universidade com as remoções: {uni}')
+
+    # apagando o objeto
+    del uni
+
+    #tentando imprimir departamentos a partir de uma universidade
+    try:
+        print(uni.list_departments())
+    except NameError:
+        print('\nDepartamentos não existe!')
+
+    #objetos professores ainda existem
+    print('\nObjetos Professor ainda existe!')
+    print(professor)
 
 
 

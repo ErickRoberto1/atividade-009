@@ -5,7 +5,7 @@ class University:
         self.departments = []
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name}\nDepartamentos: {self.departments}'
 
     def add_new_department(self,department:Department):
         if department not in self.departments:
