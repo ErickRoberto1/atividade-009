@@ -7,9 +7,9 @@ class University:
     def __str__(self):
         return f'{self.name}\nDepartamentos: {self.departments}'
 
-    def add_new_department(self,department:Department):
-        if department not in self.departments:
-            self.departments.append(department)
+    def create_new_department(self,department_name):
+        if department_name not in self.departments:
+            self.departments.append(Department(department_name))
         else:
             print('Este departamento Já existe na Universidade!')
 
