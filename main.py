@@ -29,29 +29,39 @@ def main():
     for prof,sub in zip(professor,sub):
         prof.add_subject(sub)
 
-    print(f'Departamentos: \n')
-    print(uni.list_departments())
-    print('\n')
     for dep in department:
         print(dep.list_professors())
+    print('\n')
 
-    print('\nAntes:\n')
+    print('Removendo Disciplinas de Professores: Cálculo I')
+    print('Antes:')
     for prof in professor:
         print(f'Professor: {prof.name}')
         print(f'Disciplinas: {prof.list_subjects()}')
 
-
+    print('\n')
 
     sub_to_be_removed = 'Cálculo I'
     for prof in professor:
         prof.remove_subject(sub_to_be_removed)
 
 
-    print('\nDepois:\n')
+    print('Depois:')
     for prof in professor:
         print(f'Professor: {prof.name}')
         print(f'Disciplinas: {prof.list_subjects()}')
 
+    print('\n')
+
+    print(f'Removendo departamentos da Universidade: Eng de Software')
+    print('Antes:')
+    print(uni.list_departments())
+    department_to_be_removed = 'Departamento de Engenharia de Software'
+    uni.remove_department(department_to_be_removed)
+    print('Depois:')
+    print(uni.list_departments())
+
+    print('\n')
 
 
 

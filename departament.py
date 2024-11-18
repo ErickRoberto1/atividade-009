@@ -12,11 +12,13 @@ class Departament:
         if professor_name not in self.professors:
             self.professors.append(professor_name)
 
-    def remove_professor(self, professor):
-        if professor in self.professors:
-            self.professors.remove(professor)
-            index = self.professors.index(professor)
-            del self.professors[index]
+    def remove_professor(self, professor_name):
+        for professor in self.professors:
+            if professor_name == self.professors.name:
+                index = self.get_index(professor_name)
+                del self.professors[index]
+
+
 
     def list_professors(self):
         print(f"Lista de Professores do Departamento {self.name}: ")

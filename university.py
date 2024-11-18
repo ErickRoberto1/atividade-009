@@ -16,11 +16,12 @@ class University:
     def remove_department(self,department_name):
         for department in self.departments:
             if department.name == department_name:
-                index = self.get_index(self,department_name)
+                index = self.get_index(department_name)
+                del self.departments[index]
 
     def get_index(self,department):
         for i in range(len(self.departments)):
-            if department == self.departments[i]:
+            if department == self.departments[i].name:
                 return i
 
 
